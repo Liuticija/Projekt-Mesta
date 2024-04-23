@@ -1,0 +1,56 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "informace/style.css" %}">
+
+{% endblock %}
+
+{% block title %}
+Vilnius
+{% endblock %}
+
+
+{% block hlavni %}
+
+   
+
+    <header>
+        <h1>Vilnius - Hlavní město Litvy</h1>
+        <p></p>
+        <img src="https://s7g10.scene7.com/is/image/stena/20160705_vilnius-bell-tower:29-9?ts=1688733061244&dpr=off" alt="Obrazek Vilnius" width="80%" height="auto">
+        <p></p>
+    </header>
+    <main>
+      <h2>Historie</h2>
+      <p>Vilnius má bohatou historii sahající více než 1000 let zpět. Je jedním z nejstarších a nejvýznamnějších měst ve střední a východní Evropě.</p>
+    
+      <h2>Architektura</h2>
+      <p>Město je známé svou pestrou architekturou, která zahrnuje středověké stavby, baroko, klasicismus a moderní architekturu. Staré město Vilniusu je zapsáno na seznamu světového dědictví UNESCO.</p>
+    
+      <h2>Kultura</h2>
+      <p>Vilnius je centrem litvinské kultury a nabízí mnoho muzeí, galerií, divadel a kulturních akcí po celý rok.</p>
+    
+     <h2>Vzdělání</h2>
+     <p>Vilnius je domovem ke Vilniuské univerzitě, jedné z nejstarších univerzit ve východní Evropě, založené v roce 1579.</p>
+    
+     <h2>Příroda</h2>
+     <p>Město je obklopeno krásnou přírodou, která nabízí mnoho parků a zelených ploch k procházkám a odpočinku.</p>
+    
+     <p>Vilnius je fascinující destinací s bohatou historií, kulturou a architekturou, která láká turisty z celého světa.</p>
+     
+     <br>
+     <a href="{% url 'zajimavosti' %}">Co vidět ve Vilniusu.</a>
+     <br>
+     <a href="{% url 'hlavni' %}">Hlavní stránka</a>
+     <br>
+     
+   </main>
+
+   <footer>
+    <p>&copy; 2024 Informace o Vilniusu. Všechna práva vyhrazena.</p>
+   </footer>
+
+
+
+{% endblock %}

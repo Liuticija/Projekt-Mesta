@@ -1,0 +1,49 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "informace/style.css" %}">
+
+{% endblock %}
+
+{% block title %}
+
+Poděkování
+
+{% endblock %}
+
+{% block hlavni %}
+    
+
+    <header>
+    <h1>Formulař pro předání města</h1>
+    </header>
+
+    <main>
+    
+    <style>
+        .image-container {
+            text-align: center;
+        }
+    </style>
+
+    <h2>Město úspěšně přidáno</h2>
+
+    <h2>Děkuji</h2>
+
+    <a href="{% url "seznam_city" %}"> Seznam měst v Litvě </a><br>
+
+    <a href="{% url 'hlavni' %}">Hlavní stránka</a>
+
+    <br>
+
+
+    
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024  Všechna práva vyhrazena.</p>
+       </footer>
+
+{% endblock %}

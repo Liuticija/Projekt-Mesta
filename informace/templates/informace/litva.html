@@ -1,0 +1,69 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "informace/style.css" %}">
+
+{% endblock %}
+
+{% block title%}
+Litva
+{% endblock %}
+
+
+{% block hlavni %}
+
+    
+</head>
+<body>
+    <header>
+        <h1>Informace o Litvě</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Lithuania.svg" alt="Vlajka Litvy" width="10%" height="auto" >
+
+    </header>
+
+    <main>
+        <section>
+            <h2>Hlavní město: <a href="{% url 'vilnius' %}"> Vilnius</a></h2>
+            <p>Vilnius je hlavním městem Litvy a jedním z nejstarších měst ve východní Evropě.</p>
+            <a href="{% url "seznam_city" %}"> Seznam měst v Litvě </a>
+        </section>
+
+
+        <section>
+            <p>Rozloha: přibližně 65 300 km².</p>
+            <p>Počet obyvatel: přibližně {{ pocet }} milionu.</p>
+            <p>Jazyk: litevština.</p>
+            <p>Měna: euro (EUR).</p>
+            <p>Politický systém: parlamentní republika.</p>
+            <p>Prezident: {{ prezident }}. </p>
+            
+        </section>
+
+        <section>
+            <h2>Geografie:</h2>
+            <p>Litva má pobřeží na Baltském moři na západě a jihovýchodě. Země je převážně rovinatá s lesy, jezery a řekami.</p>
+        </section>
+
+        <section>
+            <h2>Historie:</h2>
+            <p>Litva má bohatou historii, zahrnující období jako Velké litevské knížectví a Litevské korunovací kraje, kdy měla významný politický vliv ve východní Evropě.</p>
+        </section>
+
+        <section>
+            <h2>Kultura:</h2>
+            <p>Litva má bohatou kulturní tradici, která zahrnuje lidové zvyky, hudbu, tance, literaturu a architekturu.</p>
+        </section>
+
+       <p>Litva je známá svými přírodními krásami, historickými památkami a kulturou.</p>
+       <p>Je oblíbenou turistickou destinací díky svému klidnému venkovu, malebným městům a bohaté historii.</p>
+
+        
+        
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Informace o Litvě. Všechna práva vyhrazena.</p>
+    </footer>
+{% endblock %}

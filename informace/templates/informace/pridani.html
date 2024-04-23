@@ -1,0 +1,69 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "informace/style.css" %}">
+
+{% endblock %}
+
+{% block title %}
+
+Nové města
+
+{% endblock %}
+
+{% block hlavni %}
+    
+
+    <header>
+    <h1>Formulař pro předání města</h1>
+    </header>
+
+    <main>
+    
+    <style>
+        .image-container {
+            text-align: center;
+        }
+    </style>
+
+    <form action="" method="POST">
+          {% csrf_token %}
+          {{formular.as_table}} 
+        
+        <button>Odeslat</button>
+
+
+{% comment %}
+        {% for policko in formular %}
+    <div class="label">
+        {{ policko.label_tag }}
+    </div>
+
+    <div class="pole">
+        {{ policko }}
+    </div>
+    {% endfor %}
+{% endcomment%}
+    </form><br>
+
+    <a href="{% url "seznam_city" %}"> Seznam měst v Litvě </a><br>
+
+    <a href="{% url 'hlavni' %}">Hlavní stránka</a>
+
+    <br>
+
+
+    <div class="image-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Lietuvos_apskritys.png" alt="Mapa" width="50%" height="50%">
+    </div>
+
+    <br>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Administrativní dělení. Všechna práva vyhrazena.</p>
+       </footer>
+
+{% endblock %}

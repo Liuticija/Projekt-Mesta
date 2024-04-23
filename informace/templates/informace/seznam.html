@@ -1,0 +1,57 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "informace/style.css" %}">
+
+{% endblock %}
+
+{% block title %}
+
+Administrativní dělení
+
+{% endblock %}
+
+{% block hlavni %}
+    
+
+    <header>
+    <h1>Administrativní dělení</h1>
+    </header>
+
+    <main>
+    
+    <style>
+        .image-container {
+            text-align: center;
+        }
+    </style>
+
+    <ul>
+
+    {% for city in seznam %}
+    <li><a href="{% url 'city' city.id %}"> {{ city.nazev|capfirst }}</a></li>
+    {% endfor %}
+
+    </ul>
+
+    <a href="{% url 'pridani' %}">Přidej město</a><br>
+
+    <a href="{% url 'hlavni' %}">Hlavní stránka</a>
+
+    <br>
+
+
+    <div class="image-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Lietuvos_apskritys.png" alt="Mapa" width="50%" height="50%">
+    </div>
+
+    <br>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Administrativní dělení. Všechna práva vyhrazena.</p>
+       </footer>
+
+{% endblock %}

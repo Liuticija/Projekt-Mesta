@@ -1,0 +1,86 @@
+{% extends "./base.html" %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static "informace/style.css" %}">
+
+{% endblock %}
+
+
+{% block title %}   
+Zajimavosti
+{% endblock %}
+
+{% block hlavni %}
+
+
+    <header>
+       <h1>Co neminout při návštěvě</h1>
+       <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Vilnius_Modern_Skyline_At_Dusk%2C_Lithuania_-_Diliff.jpg" alt="Obrazek Vilnius" width="30%" height="auto" class="img-hover">
+    </header>
+    <style>
+        .row {
+            display: flex; 
+            justify-content: space-between; 
+        }
+        
+        .katedrala,
+        .gediminas {
+            flex: 1; 
+            margin: 0 10px; 
+        }
+
+    </style>
+
+
+    <main>
+    
+    <div class="row">
+        <div class="katedrala">
+            <p> Srdcem Senamiestis, Starého města Vilniusu, je rozlehlé <b>{{ zajimavost1|capfirst }}</b>.</p>
+            <br>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Vilnius_-_Cathedral_01.jpg" alt="Katedrala" width="30%" height="auto" class="img-hover">
+            <br>
+            <p> Jeho dominantou je nádherná římskokatolická katedrála </p>
+            <p> sv. Stanislava a sv. Vladislava, střízlivě zdobená zvenčí a bohatá uvnitř.</p>
+        </div>
+
+       
+        <div class="gediminas">
+            <p> Výhled na celý Vilnius jako na dlani se nabízí z nepřehlédnutelného kopce uprostřed města.</p>
+            <br>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Gedimino_pilis_by_Augustas_Didzgalvis.jpg" alt="Gediminuv Palac" width="30%" height="auto" class="img-hover">
+            <br>
+            <p> Je to přesně ten kopec, pod kterým Gediminas přespával a na kterém dodnes stojí <b>{{ zajimavost2|capfirst }}</b> respektive zbytek z něj červená věž.</p>
+        </div>
+    </div>
+
+    <br></br>
+    
+    <a href="{% url 'hlavni' %}">Hlavní stránka</a>
+    <br></br>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Zajímavostí ve Vilniusu. Všechna práva vyhrazena.</p>
+       </footer>
+    
+       <script>
+        
+        const images = document.querySelectorAll('.img-hover');
+    
+      
+        images.forEach(image => {
+            image.addEventListener('mouseenter', () => {
+                image.style.transform = 'scale(2.1)';
+                image.style.transition = 'transform 0.3s ease';
+            });
+    
+            image.addEventListener('mouseleave', () => {
+                image.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+    
+{% endblock %}
